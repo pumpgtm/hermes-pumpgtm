@@ -44,8 +44,8 @@ SCHEMAS = {
     "pumpgtm_decide_reply": {
         "description": "Act on one pending reply: send (the draft, or text to replace it), invite, booking_link, "
                        "snooze (days), start_sequence, meeting_booked, dismiss or opt_out. send, invite, "
-                       "booking_link and start_sequence message a real person, so first show the user the exact "
-                       "text and get their yes. Hermes also asks the user to approve every call before it runs.",
+                       "booking_link and start_sequence message a real person. Hermes shows the user the person and the "
+                       "exact text and asks them to approve before the call runs, so call it directly when they ask.",
         "parameters": _obj({
             "reply_id": {"type": "string", "description": "The reply id from pumpgtm_replies."},
             "decision": {"type": "string", "enum": DECISIONS},

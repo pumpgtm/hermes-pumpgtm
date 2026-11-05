@@ -13,7 +13,7 @@
 | `/pumpgtm` command | `/pumpgtm replies` lists waiting replies without a model call. `/pumpgtm send <id>` shows the draft with Send and Cancel buttons (Telegram, Discord, Slack) or a picker (CLI, Desktop). Only a person clicking Send sends. |
 | Automation blueprint | `/blueprint pumpgtm:reply-digest` schedules a check every 15, 30 or 60 minutes. New replies are posted to your chat with the draft and a `/pumpgtm send <id>` line; quiet runs stay silent. Replies already reported are remembered in plugin state, so each one is posted once. |
 
-![Reply digest in chat](docs/digest.png)
+![Funnel and waiting replies in the Hermes CLI](docs/chat.png)
 
 ## Setup
 

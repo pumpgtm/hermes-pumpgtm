@@ -76,7 +76,7 @@ def register(ctx):
                 decide(ws(), reply["id"], "send", by="hermes:/pumpgtm")
                 return f"Sent to {_who(reply)}."
         except PumpGTMError as exc:
-            return f"PumpGTM refused: {exc.message}"
+            return f"Not sent. PumpGTM said: {exc.message}"
         return "Usage: /pumpgtm replies | /pumpgtm send <reply id>"
 
     ctx.register_command("pumpgtm", pumpgtm_command, description="PumpGTM replies waiting, and approve one",
