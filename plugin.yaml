@@ -1,0 +1,35 @@
+name: pumpgtm
+version: 1.0.0
+description: "PumpGTM in Hermes: read your outreach sequences, leads and funnel, enrich people, and answer prospect replies from chat with a scheduled reply digest and an approval gate on every reply decision."
+author: PumpGTM (Giga Next Inc.)
+manifest_version: 2
+api_version: 1
+license: MIT
+homepage: https://github.com/pumpgtm/hermes-pumpgtm
+tags: [sales, outreach, linkedin, email, crm]
+requires_hermes: ">=0.22.7"
+requires_env:
+  - name: PUMPGTM_API_KEY
+    description: "PumpGTM workspace key (starts with eve_mcp_)"
+    url: "https://app.pumpgtm.com/install-mcp"
+    secret: true
+config_schema:
+  api_key:
+    type: secret
+    env: PUMPGTM_API_KEY
+    label: "Workspace key"
+    description: "PumpGTM workspace key from app.pumpgtm.com/install-mcp. Stored in .env, sent only to app.pumpgtm.com."
+  workspace_id:
+    type: str
+    default: ""
+    label: "Team workspace ID"
+    description: "Optional. A Team owner key can act on another workspace from GET /workspaces. Leave empty for the key's own workspace."
+provides_tools:
+  - pumpgtm_sequences
+  - pumpgtm_leads
+  - pumpgtm_progress
+  - pumpgtm_replies
+  - pumpgtm_decide_reply
+  - pumpgtm_enrich_person
+provides_hooks:
+  - pre_tool_call
